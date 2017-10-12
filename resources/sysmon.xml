@@ -1,0 +1,28 @@
+<Sysmon schemaversion="2.01">
+                                <!-- Capture all hashes -->
+                <HashAlgorithms>*</HashAlgorithms>
+                <EventFiltering>
+                        <ProcessCreate default="include"/>
+                        <ProcessTerminate onmatch="exclude"/>
+                        <DriverLoad onmatch="exclude">
+                                <Signature condition="contains">microsoft</Signature>
+                                <Signature condition="contains">windows</Signature>
+                        </DriverLoad>
+                        <NetworkConnect onmatch="exclude"/>
+                        <ImageLoad onmatch="include">
+                                <Image>C:\Windows\System32\lsass.exe</Image>
+               <Image condition="contains">AcroRd32.exe</Image>
+               <Image condition="contains">chrome.exe</Image>
+               <Image condition="contains">OUTLOOK.EXE</Image>
+               <Image condition="contains">FlashPlayerPlugin</Image>
+               <Image condition="contains">iexplore.exe</Image>
+               <Image condition="contains">firefox.exe</Image>
+
+                        </ImageLoad>
+                        <CreateRemoteThread onmatch="exclude">
+                                <SourceImage>c:\windows\system32\csrss.exe</SourceImage>
+                                <SourceImage>c:\windows\system32\wbem\wmiprvse.exe</SourceImage>
+                                <SourceImage>c:\windows\syswow64\wbem\wmiprvse.exe</SourceImage>
+                        </CreateRemoteThread>
+                </EventFiltering>
+</Sysmon>
