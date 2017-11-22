@@ -10,7 +10,7 @@ $DestDir = "c:\vagrant\resources\"
 $SysmonExe = $DestDir+"Sysmon.exe"
 $SysmonZip = $DestDir+"Sysmon.zip"
 
-$NxLogMsi = $DestDir+"nxlog-ce-2.9.1504.msi"
+$NxLogMsi = $DestDir+"nxlog-ce-2.9.1716.msi"
 
 New-Item -Force -ItemType directory -Path $DestDir
 
