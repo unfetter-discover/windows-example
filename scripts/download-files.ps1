@@ -15,7 +15,7 @@ $NxLogMsi = $DestDir+"nxlog-ce-2.9.1504.msi"
 New-Item -Force -ItemType directory -Path $DestDir
 
 $SourceSysmon = "https://download.sysinternals.com/files/Sysmon.zip"
-$SourceNxLog = "https://nxlog.co/system/files/products/files/1/nxlog-ce-2.9.1716.msi"
+$SourceNxLog = "https://nxlog.co/system/files/products/files/348/nxlog-ce-2.9.1716.msi"
 
 $wc = New-Object System.Net.WebClient
 $wc.proxy = $proxy
