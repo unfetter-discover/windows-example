@@ -21,6 +21,7 @@ Clause 252.227-7014 (FEB 2012)
 Vagrant.configure(2) do |config|
  
   config.vm.box = "win7"
+  config.vm.box_url = "http://aka.ms/vagrant-win7-ie11"
   config.vm.guest = :windows
   config.vm.communicator = "winrm"
   config.vm.boot_timeout = 1000
